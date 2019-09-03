@@ -1,0 +1,144 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.game {
+  height: 150vh;
+  width: 100%;
+  background: #ffeded;
+}
+.game__win {
+  height: 150vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.514);
+  display: none;
+}
+.game__win__container {
+  border-radius: 10px;
+  box-shadow: 0px 8px 8px 2px #1d1d1d79;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+}
+.game__win__container button {
+  background: #ff637d;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0px 8px 8px 2px #1d1d1d79;
+}
+.game .game-over {
+  display: inline;
+}
+.game__timer {
+  color: #ff4a68;
+  font-size: 50px;
+}
+.game__start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 8px 12px 2px #1d1d1d79;
+}
+.game__start button {
+  background: #ff4a68;
+  color: white;
+  font-size: 30px;
+  border: none;
+  box-shadow: 0px 8px 8px 2px #1d1d1d79;
+  border-radius: 10px;
+}
+.game__start__header {
+  color: #ff4a68;
+}
+.game .hideStart {
+  display: none;
+}
+.game__board {
+  margin: 0 auto;
+  background: #ff4a68;
+  max-width: 560px;
+  width: 80vw;
+  max-height: 500px;
+  border-radius: 5px;
+}
+.game__board .card {
+  margin: auto;
+  max-height: 100px;
+  max-width: 100px;
+  width: 16vw;
+  height: 12vh;
+  margin: 10px auto;
+  box-shadow: 0px 4px 2px 0px #1d1d1d79;
+}
+.game__board .card:hover {
+  cursor: pointer;
+}
+.game__board .photo0 {
+  background: url("https://images.unsplash.com/photo-1548247416-ec66f4900b2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=663&q=80");
+  background-size: cover;
+}
+.game__board .photo1 {
+  background: url("https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=639&q=80");
+  background-size: cover;
+}
+.game__board .photo2 {
+  background: url("https://images.unsplash.com/photo-1491604612772-6853927639ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+  background-size: cover;
+}
+.game__board .photo3 {
+  background: url("https://images.unsplash.com/photo-1523626797181-8c5ae80d40c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+  background-size: cover;
+}
+.game__board .photo4 {
+  background: url("https://images.unsplash.com/photo-1558788353-f76d92427f16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=678&q=80");
+  background-size: cover;
+}
+.game__board .photo5 {
+  background: url("https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
+  background-size: cover;
+}
+.game__board .photo6 {
+  background: url("https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1027&q=80");
+  background-size: cover;
+}
+.game__board .photo7 {
+  background: url("https://images.unsplash.com/photo-1548366086-7f1b76106622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=624&q=80");
+  background-size: cover;
+}
+.game__board .photo8 {
+  background: url("https://images.unsplash.com/photo-1519052537078-e6302a4968d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+}
+.game__board .photo9 {
+  background: url("https://images.unsplash.com/photo-1513245543132-31f507417b26?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+  background-size: cover;
+}
+.game__board .flip {
+  background: #f7fff7;
+  transform: rotateY(0deg);
+  transition: 0.4s;
+}
+.game__board .flip:hover {
+  box-shadow: 0px 0px 8px 2px white;
+}
+.game__board .active {
+  transform: rotateY(180deg);
+  transition: 0.7s;
+}
+.game .boardActive {
+  box-shadow: 0px 8px 12px 2px #1d1d1d79;
+}
+
+/*# sourceMappingURL=main.css.map */
