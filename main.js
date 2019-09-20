@@ -16,15 +16,18 @@ var cardArray = [];
 // Timer variables
 var sec = 30;
 var min = 1;
-timerStart();
+var timer;
+startGame();
 
 
 // Function that starts game. Upon clicking it starts the timer and creates a new board of shuffled cards
-function timerStart() {
+function startGame() {
     document.getElementById("startGame").addEventListener('click', function() {
         sec = 30;
         min = 1;
         restartGame();
+        clearInterval(timer);
+        // Function for starting the timer.
         var timer = setInterval(function() {
             document.getElementById('timer').innerHTML = ('0' + min + ':' + sec);
             if(sec < 10) {document.getElementById('timer').innerHTML = ('0' + min + ':0' + sec);}
@@ -44,6 +47,9 @@ function timerStart() {
         }, 1000);
     });
 }
+
+
+
 
 // Function for restarting the game. Sets values of variables to 0 and creates a new board.
 function restartGame() {
@@ -148,6 +154,7 @@ function winChecker() {
     if(matchedCards.length == 20) {
         document.getElementById('endCaption').innerHTML = 'Congratulations! You won!';
         document.querySelector('.game__win').classList.add('game-over');
+        clearInterval(timer);
         sec = 30;
         min = 1;
         
