@@ -4,7 +4,7 @@ html, body {
 }
 
 .game {
-  height: 150vh;
+  height: 100vh;
   width: 100%;
   background: #ffeded;
 }
@@ -32,7 +32,7 @@ html, body {
   color: white;
   border: none;
   border-radius: 5px;
-  box-shadow: 0px 8px 8px 2px #1d1d1d79;
+  box-shadow: 0px 2px 8px 2px #97979779;
   padding: 5px 50px;
   font-size: 25px;
   margin: 20px;
@@ -43,6 +43,17 @@ html, body {
 .game__timer {
   color: #ff4a68;
   font-size: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+.game__timer h2 {
+  background: white;
+  box-shadow: 0px 2px 6px 2px rgba(216, 216, 216, 0.534);
+  border-radius: 5px;
+  display: inline-block;
+  padding: 25px 50px;
+  font-size: 40px;
+  margin-top: 20px;
 }
 .game__start {
   position: absolute;
@@ -52,14 +63,14 @@ html, body {
   z-index: 5;
   background: white;
   border-radius: 15px;
-  box-shadow: 0px 8px 12px 2px #1d1d1d79;
+  box-shadow: 0px 2px 6px 2px rgba(216, 216, 216, 0.534);
 }
 .game__start button {
   background: #ff4a68;
   color: white;
   font-size: 30px;
   border: none;
-  box-shadow: 0px 8px 8px 2px #1d1d1d79;
+  box-shadow: 0px 2px 8px 2px rgba(131, 131, 131, 0.986);
   border-radius: 10px;
   padding: 5px 50px;
 }
@@ -76,6 +87,11 @@ html, body {
   width: 80vw;
   max-height: 500px;
   border-radius: 5px;
+}
+@media only screen and (max-width: 480px) {
+  .game__board {
+    width: 92vw;
+  }
 }
 .game__board .card {
   margin: auto;
@@ -137,7 +153,7 @@ html, body {
   transition: 0.7s;
 }
 .game .boardActive {
-  box-shadow: 0px 8px 12px 2px #1d1d1d79;
+  box-shadow: 0px 4px 6px 2px #acacac;
 }
 
 /*# sourceMappingURL=main.css.map */

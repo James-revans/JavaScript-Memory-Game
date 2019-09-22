@@ -1,21 +1,21 @@
 // Creating variables to be used throughout project
 //
 // Array that checks if the cards have matching pictures
-var photoCheck = [null, null];
+let photoCheck = [null, null];
 
 // Array that will add and remove classes on click
-var cardTracker = [null, null];
+let cardTracker = [null, null];
 
 // Arrays of random numbers that will be assigned to the cards on creation
-var randomArray = [];
-var randomArray2 = [];
+let randomArray = [];
+let randomArray2 = [];
 
 // Array of card objects
-var cardArray = [];
+let cardArray = [];
 
 // Timer variables
-var sec = 30;
-var min = 1;
+let sec = 30;
+let min = 1;
 var timer;
 startGame();
 
@@ -28,7 +28,7 @@ function startGame() {
         restartGame();
         clearInterval(timer);
         // Function for starting the timer.
-        var timer = setInterval(function() {
+        timer = setInterval(function() {
             document.getElementById('timer').innerHTML = ('0' + min + ':' + sec);
             if(sec < 10) {document.getElementById('timer').innerHTML = ('0' + min + ':0' + sec);}
             if(sec > 0) {
@@ -106,51 +106,51 @@ function createCards() {
 function flipCheck() {
     // variable 'cards' is an array of divs all containing the class 'card'
     // cardArray is an array of card objects
-    var cards = document.getElementsByClassName('card');
+    let cards = document.getElementsByClassName('card');
  
     for(let i=0; i<20; i++) {
         cards[i].addEventListener('click', function clickFunction() {
-        
-            cards[i].classList.add('active');
-            setTimeout(function() {
-                cards[i].classList.remove('flip');
-            }, 200);
 
-                photoCheck[1] = photoCheck[0];
-                photoCheck[0] = cardArray[i];
-                
-                cardTracker[1] = cardTracker[0];
-                cardTracker[0] = cards[i];
+        cards[i].classList.add('active');
+        setTimeout(function() {
+            cards[i].classList.remove('flip');
+        }, 200);
 
-                if(photoCheck[1].photoNumber) {
-                    if(photoCheck[0].photoNumber === photoCheck[1].photoNumber) {
-                        photoCheck[0].flip = true;
-                        photoCheck[1].flip = true;
-                        winChecker();
-                        cardTracker, photoCheck = [null, null];
-                        
-                    }
-                    else {
-                        photoCheck = [null, null];
-                        setTimeout(function(){
-                            cardTracker[1].classList.remove('active');
-                            cardTracker[0].classList.remove('active');
+            photoCheck[1] = photoCheck[0];
+            photoCheck[0] = cardArray[i];
+            
+            cardTracker[1] = cardTracker[0];
+            cardTracker[0] = cards[i];
 
-                            cardTracker[1].classList.add('flip');
-                            cardTracker[0].classList.add('flip');
-                            cardTracker = [null, null];
-                        }, 800);
-                        
-                    }
+            if(photoCheck[1].photoNumber) {
+                if(photoCheck[0].photoNumber === photoCheck[1].photoNumber && (cardTracker[0] !== cardTracker[1])) {
+                    photoCheck[0].flip = true;
+                    photoCheck[1].flip = true;
+                    winChecker();
+                    cardTracker, photoCheck = [null, null];
+                    
+                }
+                else {
+                    let storeOld = cardTracker;
+                    photoCheck = [null, null];
+                    cardTracker = [null, null];
+                    
+                    setTimeout(function(){
+                        storeOld[1].classList.remove('active');
+                        storeOld[0].classList.remove('active');
+                        storeOld[1].classList.add('flip');
+                        storeOld[0].classList.add('flip');
+                    }, 800);
+                }
             }   
-            }, false);
+        }, false);
     }
 }
 
 
 // Function that checks to see when all 20 cards are flipped over
 function winChecker() {
-    var matchedCards = document.getElementsByClassName('active');
+    let matchedCards = document.getElementsByClassName('active');
     if(matchedCards.length == 20) {
         document.getElementById('endCaption').innerHTML = 'Congratulations! You won!';
         document.querySelector('.game__win').classList.add('game-over');
@@ -158,7 +158,7 @@ function winChecker() {
         sec = 30;
         min = 1;
         
-        
+
     }
 }
 
@@ -167,7 +167,7 @@ function winChecker() {
 // final array will have length of 20 for all 20 cards
 function numberAssign() {
     while(randomArray.length < 10 || randomArray2.length < 10) {
-        var number = Math.floor(Math.random() * 10);
+        let number = Math.floor(Math.random() * 10);
         if(randomArray.includes(number)) {
             if(randomArray2.includes(number)) {
                 

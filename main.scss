@@ -1,6 +1,7 @@
 html, body {
     width: 100%;
     height: 100%;
+    // overflow-y: hidden;
     
 }
 
@@ -14,7 +15,7 @@ html, body {
 
 
 .game {
-    height: 150vh;
+    height: 100vh;
     width: 100%;
     background: rgb(255, 237, 237);
     
@@ -41,7 +42,7 @@ html, body {
                 color: white;
                 border: none;
                 border-radius: 5px;
-                box-shadow: 0px 8px 8px 2px #1d1d1d79;
+                box-shadow: 0px 2px 8px 2px #97979779;
                 padding: 5px 50px;
                 font-size: 25px;
                 margin: 20px;
@@ -54,6 +55,17 @@ html, body {
     &__timer {
         color: rgb(255, 74, 104);
         font-size: 50px;
+        margin: 0 auto;
+        text-align: center;
+        h2 {
+            background: white;
+            box-shadow: 0px 2px 6px 2px rgba(216, 216, 216, 0.534);
+            border-radius: 5px;
+            display: inline-block;
+            padding: 25px 50px;
+            font-size: 40px;
+            margin-top: 20px;
+        }
     } 
 
     &__start {
@@ -64,14 +76,14 @@ html, body {
         z-index: 5;
         background: rgb(255, 255, 255);
         border-radius: 15px;
-        box-shadow: 0px 8px 12px 2px #1d1d1d79;
+        box-shadow: 0px 2px 6px 2px rgba(216, 216, 216, 0.534);
         
         button {
             background: rgb(255, 74, 104);
             color: white;
             font-size: 30px;
             border: none;
-            box-shadow: 0px 8px 8px 2px #1d1d1d79;
+            box-shadow: 0px 2px 8px 2px rgba(131, 131, 131, 0.986);
             border-radius:  10px;
             padding: 5px 50px;
         }
@@ -92,6 +104,9 @@ html, body {
         width: 80vw;
         max-height: 500px;
         border-radius: 5px;
+        @media only screen and (max-width: 480px) {
+            width: 92vw;
+        }
 
         .card {
             margin: auto;
@@ -160,6 +175,6 @@ html, body {
         }
     }
     .boardActive {
-        box-shadow: 0px 8px 12px 2px #1d1d1d79;
+        box-shadow: 0px 4px 6px 2px rgb(172, 172, 172);
     }
 }
